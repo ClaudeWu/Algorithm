@@ -17,6 +17,7 @@ class Solution(object):
             root = root.next
         return result.next
 
+#Create test case & environment
 class ListNode(object):
     def __init__(self, x):
         self.val = x

@@ -1,6 +1,7 @@
 import heapq
 import math
 
+#create map
 graph = {
     "A": ["B": 5, "C": 1],
     "B": ["A": 5, "C": 2, "D": 1],
