@@ -1,21 +1,21 @@
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
-        root = ListNode(0)
-        result = root
-        carry = 0
-        while l1 or l2 or carry == 1:
-            value = 0
-            if l1:
+         root = ListNode(0) # create a root node, the return result will be the number behind this node
+        result = root # let the result bound with rood node
+        carry = 0 # create a carry for reference
+        while l1 or l2 or carry == 1: # if l1, l2 or carry is exist
+            value = 0 # create a empty value
+            if l1: # if l1 exist, then sign the l1 value to empty value, and move the l1 to next one
                 value += l1.val
                 l1 = l1.next
-            if l2:
+            if l2: # if l2 exist, then sign the l2 value to empty value, and move the l2 to next one
                 value += l2.val
                 l2 = l2.next
-            value += carry
-            root.next = ListNode(value % 10)
-            carry = int(value / 10)
-            root = root.next
-        return result.next
+            value += carry # add the final value to carry to calculate current value
+            root.next = ListNode(value % 10) # take ones digit from the result
+            carry = int(value / 10) # get carry
+            root = root.next # root move to next
+        return result.next # return to nest node (first always zero)
 
 #Create test case & environment
 class ListNode(object):
