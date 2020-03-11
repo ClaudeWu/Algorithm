@@ -36,7 +36,8 @@ class Solution(object):
     def checkEvenPalindrome(self, s, index):
         start = index
         end = min(index + 1, len(s) - 1)
-        while start >= 1 and end < len(s) - 1 and s[start - 1] == s[end + 1] and s[start] == s[end]:
+        while start >= 1 and end < len(s) - 1 and s[start - 1] == s[end + 1] and s[start] == s[end]: # ensure that
+            # two numbers may equal in the beginning, so add condition s[start] == s[end]
             start -= 1
             end += 1
         if end - start > self.longestSize and s[start] == s[end]:  # store the length if the result bigger then
